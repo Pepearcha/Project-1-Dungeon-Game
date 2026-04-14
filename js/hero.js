@@ -4,6 +4,7 @@ const hero = {
   col: 1,
   health: 3,
   score: 0,
+  invincible: false,
 }
 
 function moveHero(newRow, newCol) {
@@ -38,5 +39,5 @@ function moveHero(newRow, newCol) {
 
   // Re-render the map and update HUD to show score
   renderMap()
-  updateHUD();
+  updateHUD()
 }
