@@ -1,11 +1,11 @@
 // Tiles of the map
 const TILES = {
-    floor: 0,
-    wall: 1,
-    hero: 2,
-    enemy: 3,
-    item: 4,
-    exit: 5,
+    FLOOR: 0,
+    WALL: 1,
+    HERO: 2,
+    ENEMY: 3,
+    ITEM: 4,
+    EXIT: 5,
 }
 
 // Map Layout Array 
@@ -36,9 +36,9 @@ function renderMap() {
             div.dataset.row = rowIndex;
             div.dataset.col = colIndex;
 
-            if (cell === TILES.wall)  div.classList.add('wall');
-            if (cell === TILES.floor) div.classList.add('floor');
-            if (cell === TILES.hero){
+            if (cell === TILES.WALL)  div.classList.add('wall');
+            if (cell === TILES.FLOOR) div.classList.add('floor');
+            if (cell === TILES.HERO){
                 div.classList.add('floor')
                 div.textContent = '🧙'
             }
@@ -46,7 +46,7 @@ function renderMap() {
                 div.classList.add('floor')
                 div.textContent = '👾'
             }
-            if (cell === TILES.item) {
+            if (cell === TILES.ITEM) {
                 div.classList.add('floor');
                 div.textContent = '💎'
             }
