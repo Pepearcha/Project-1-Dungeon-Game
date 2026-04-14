@@ -38,10 +38,22 @@ function renderMap() {
 
             if (cell === TILES.wall)  div.classList.add('wall');
             if (cell === TILES.floor) div.classList.add('floor');
-            if (cell === TILES.hero)  div.classList.add('floor');
-            if (cell === TILES.enemy) div.classList.add('floor');
-            if (cell === TILES.item)  div.classList.add('floor');
-            if (cell === TILES.exit)  div.classList.add('floor');
+            if (cell === TILES.hero){
+                div.classList.add('floor')
+                div.textContent = '🧙'
+            }
+            if (cell === TILES.ENEMY) {
+                div.classList.add('floor')
+                div.textContent = '👾'
+            }
+            if (cell === TILES.item) {
+                div.classList.add('floor');
+                div.textContent = '💎'
+            }
+            if (cell === TILES.EXIT) {
+                div.classList.add('floor')
+                div.textContent = '🚪'
+            }
 
             container.appendChild(div);
         })
