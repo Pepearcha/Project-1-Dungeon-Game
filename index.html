@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="hud">
-      <span id="health">❤️ Health: 3</span>
-      <span id="score">⭐ Score: 0</span>
+    <div id="start-screen">
+        <h1>Dungeon Crawler</h1>
+        <p>Navigate the dungeon, collect the treasure and escape!</p>
+        <ul>
+            <li>🧙 Use arrow keys to move</li>
+            <li>💎 Collect the gem to unlock the exit</li>
+            <li>🚪 Reach the exit to win</li>
+            <li>👾 Avoid the enemy or lose a life</li>
+            <li>❤️ You have 3 lives</li>
+        </ul>
+        <button id="start-button">Start Game</button>
     </div>
-
-    <div id="game-container"></div>
+    <div id="game">
+        <div id="hud">
+        <span id="health">❤️ Health: 3</span>
+        <span id="score">⭐ Score: 0</span>
+        </div>
+        <div id="game-container"></div>
+    </div>
 
     <script src="js/map.js"></script>
     <script src="js/hero.js"></script>

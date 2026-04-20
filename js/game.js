@@ -2,7 +2,12 @@
 window.onload = function() {
   renderMap()
   updateHUD()
-  setInterval(moveEnemy, enemy.speed)
+
+  document.getElementById('start-button').addEventListener('click', function() {
+    document.getElementById('start-screen').style.display = 'none'
+    document.getElementById('game').style.display = 'block'
+    setInterval(moveEnemy, enemy.speed)
+  })
 }
 
 document.addEventListener('keydown', function(event) {
@@ -14,7 +19,9 @@ document.addEventListener('keydown', function(event) {
 
 function winGame() {
   setTimeout(function() {
-    alert('🎉 You escaped the dungeon! Score: ' + hero.score)
+    if (confirm('🎉 You escaped the dungeon! Score: ' + hero.score + '\n\nPlay again?')) {
+      location.reload()
+    }
   }, 100)
 }
 
@@ -49,6 +56,8 @@ function loseLife() {
 
 function loseGame() {
   setTimeout(function() {
-    alert('💀 Game over! The enemy got you!')
+    if (confirm('💀 Game over! The enemy got you!\n\nPlay again?')) {
+      location.reload()
+    }
   }, 100)
 }
