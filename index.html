@@ -12,17 +12,25 @@
         <p>Navigate the dungeon, collect the treasure and escape!</p>
         <ul>
             <li>🧙 Use arrow keys to move</li>
-            <li>💎 Collect the gem to unlock the exit</li>
+            <li>🗝️ Collect the key to unlock the exit</li>
             <li>🚪 Reach the exit to win</li>
             <li>👾 Avoid the enemy or lose a life</li>
             <li>❤️ You have 3 lives</li>
+            <li>⚡ Use your ability to stun enemies</li>
         </ul>
         <button id="start-button">Start Game</button>
     </div>
+    <div id="level-screen">
+        <h2 id="level-title">⚔️ Level 2</h2>
+        <p>The dungeon grows darker...</p>
+        <p id="level-stats"></p>
+    </div>
     <div id="game">
         <div id="hud">
-        <span id="health">❤️ Health: 3</span>
-        <span id="score">⭐ Score: 0</span>
+            <span id="level">📜 Level: 1</span>
+            <span id="health">❤️ Health: 3</span>
+            <span id="stun">⚡ Stun: Ready</span>
+            <span id="key">🗝️ Key: No</span>
         </div>
         <div id="game-container"></div>
     </div>

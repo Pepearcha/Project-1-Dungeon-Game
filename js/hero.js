@@ -3,8 +3,10 @@ const hero = {
   row: 1,
   col: 1,
   health: 3,
-  score: 0,
+  hasKey: false,
   invincible: false,
+  stunReady: true,
+  stunCooldown: 30,
 }
 
 function moveHero(newRow, newCol) {
@@ -14,7 +16,7 @@ function moveHero(newRow, newCol) {
   // Check if destination is a wall
   if (map[newRow][newCol] === TILES.WALL) return
   // Check if exit is locked
-  if (map[newRow][newCol] === TILES.EXIT && hero.score === 0) return
+  if (map[newRow][newCol] === TILES.EXIT && hero.hasKey === false) return
 
   // Save what tile we're moving onto before overwriting it
   const destinationTile = map[newRow][newCol]
@@ -29,15 +31,16 @@ function moveHero(newRow, newCol) {
   // Update map array - set new position
   map[hero.row][hero.col] = TILES.HERO;
   if ( destinationTile === TILES.ITEM) {
-    hero.score++;
+    hero.hasKey = true;
+    updateKey();
   }
 
   //Finish game if exit is reached and item grabbed
-  if (destinationTile === TILES.EXIT && hero.score > 0) {
+  if (destinationTile === TILES.EXIT && hero.hasKey === true) {
     winGame()
   }
 
-  // Re-render the map and update HUD to show score
+  // Re-render the map and update HUD
   renderMap()
   updateHUD()
 }
